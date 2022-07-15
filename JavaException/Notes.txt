@@ -1,0 +1,44 @@
+Exception : 
+       -> Abnormal behaviour in programs.which stops the program immediately.
+       eg: the number divided by zero that is Infinity.
+       ->As we know int can't hold the Infinity value. so the JVM will Stop the excution.
+       
+       -> To handle this kind of errors in runtime we have exception handling.
+       
+       -> when ever the exception occur the corresponding object will be thrown.
+  Exception object should be Throwable.(JVM get out from stack)
+      
+      
+   Throwable(class) type:-super class of all error and exception.
+       - Exception (occur during runTime).when ever the exception will occure the corresponding object will be thrown.
+                              
+       -Error (like out of memory,occur during compile time,shouldn't try to catch).
+   ->Throwable contains the snapshot of excution stack.It also contains the more information about the error's.
+   
+ while occuring exception we know
+   1) what kind of exception(Exception name).
+   2)stack line.
+   3)Message String.
+   
+ JVM throw the exception only when the object is one of its subclasses.      
+ 
+ Exception:
+     -Checked Exception(conpile have knowledage on Exception)
+     -UnChecked Exception 
+ 
+ Exception Handling : The exception that are thrown(occured) that will be catch.
+        few sub-classes for Exception
+          ->Runtime Exception(unchecked Exception) -while programming is running if it throws the exception then it comes under runtime exception.
+                few subclass's
+                   ->Arithmetic Exception
+                   ->NoSuchElementException
+                   ->NullPointer Exception
+                   ->Input mismatch
+          ->interrupted Exception 
+          
+          
+ User-Defined Exception :
+               we can create our own exception by extends the Exception class 
+ because if JVM wants to handle the exception. JVM should know the object in prior. that  can 
+ be possible when we extends the Exception which is parent class of Throwable.
+ and we can throw the exception but the exception should be handled either by throws or try Catch.
