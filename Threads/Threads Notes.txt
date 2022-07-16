@@ -1,0 +1,83 @@
+concurrency
+   do more then one process at the time.
+concurrency can be achieved in two ways 
+
+   i)multiprocessing (self contained excution environment,Multiasking)
+   ii)Threading  
+   
+   JVM: Single process
+    to achieve concurrency
+ 
+MultiThreading
+     ->light weight
+     
+by default  we start with Main thread.This thread have capability of creating new
+thread
+
+use :
+ when multiple user involve
+   eg:Video Games, Web Server - meet
+ 
+ MultiThread:
+     doing may task(JOB) at same time inside a single process
+     
+MultiThread can be achieved :
+   1)Extending Thread class
+   2)Implementinrg Runnable Interface
+   
+Thread class run()
+    
+    class start()// create the new thread
+    
+Exception :
+  illegalThreadStateException  // if we start thread more then once
+  illegalagumentException // if set the priority more then 10
+  
+ Thread Life Cycle:
+        1)new  //creating new Thread
+          start()
+        2)Runnable // tell the JVM to start
+          run()
+        3)Running 
+            
+ End of Execution :                sleep(), wait()
+  4)Dead                            4)Waiting
+  
+  object.getState()// return the state of thread
+  
+  Developer Moving a thread to Runnable
+  JVM Moving Runnable to RUN
+  
+  ThreadScheduler:
+     -> Decides Which Thread to be move from Runnable to Running
+     -> it can set priority  1 to 10
+     
+     
+     
+default priority -5
+
+obj.getName();
+obj.setName();
+
+obj.getId();
+     
+ 
+obj.yield() // currently excuting threads giving chance to other thread.which have same priority. it happens in running state
+
+
+join()
+  if the threads want to wait any other thread excution.
+  
+  
+ Thread Interrupt method 
+     sleep()
+     yield()
+     join()
+  
+  
+  obj.interrupt();// interrupt the sleeping thread.
+    eg:Wifi start off while no internet conncetion
+    
+    
+    
+  
