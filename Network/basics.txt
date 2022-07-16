@@ -1,0 +1,127 @@
+HOST :
+    -> Host are anu device which sends or receive traffic
+     eg: Laptop,Computer,Phone,Printer,Server,cloud Server..
+     
+     
+   IP Address[0-255]: IP address is the identity of each host.
+     -we need the IP address to send and recive packet on the network.
+     -represented as Four octets
+     
+   packetTransfer : 
+      Source <-> Destination
+      
+  Browser looks up IP address for teh domain(DNS).
+  Browser initiates TCO connection with the server
+  Browsr sends the HTTP request with the server
+  
+  
+  Transmission Mode :
+   mean=Transferring data between two device
+    ->Simplex
+    ->Half-Duplex,
+    ->Full-Duplex.
+  Simplex:
+     unidirectional communication.
+     only one of the two can send the data.
+     eg:keyboard
+   Half-Duplex
+     Both transmit and recive but not at the same time.
+     eg:Walki-talkie
+   Full-Duplex
+     Both station can transmit ans receive simultanously.
+ 
+ 
+ 
+Subnetting :
+Taking a network and dividing it into sub-networks. 
+
+CIDR :classless Inter Domain Routing
+/nework
+
+
+
+OSI Layer :
+   Purpose of networking allow two host to share data with one another
+   
+   Host must follow a set of rules:(& Layers)
+       7)Application
+       6)Presentation
+       5)Session 
+       4)Transport
+       3)Network
+       2)Data Link
+       1)Physical
+       
+ Each layer serve a specfic function:
+ 
+ 
+ 1)Physical Layer :
+      ->Computer data exits in the form of Bits (1's and 0's)
+      ->This layer transport those bits between the host
+      eg:twisted pair,coaixl,Fiber,wifi,repeaters,hub
+       
+ 2)DataLink Layer:   [Frame]
+      ->Interacts with the Wire(i.e, Physical layer)
+      NIC-network Interface card , Wifi Access Cards(Hop to Hop delivery)
+       
+ MAC address : (48 bits , represented 6 hex digits)
+   two part in it
+    eg: DC-FB-48-7B-FB-9B
+        - windows, : linux, .router
+      1st 3 parts Manufacture ID
+      2nd 3 parts NIC Serial ID
+      
+      Mac address used in switch,NIC
+      
+      The layer 2 takes data from 1st mac address to the next MAC adress.
+      
+      
+  3)Network Layer : (end to end delivery)  [packet]IP
+       addressing Scheme - IP address
+       32 bits, 4 octets.
+       
+       Router 
+   4)Transport layer  (Service to Service)   [Segments] 
+     This layer make sure that right program recives right data.  
+       addressing Scheme - Ports
+       . 0-65535 -TCP  favors reliablility
+       . 0-65535 -UDP  favours efficiency
+       
+       Servers listen for random to pre-defined Ports
+       Clients select random port for each connection
+       
+     
+     Session , Presentation, Application layer
+     
+   IN OSI sender side each layer encapsulate the message,
+      reciver ride each layer will decapsulate the message.
+  
+  
+  TCP 
+  5.Application   data
+  4.Trasport      TCP + data        [segment]
+  3.Network       IP + TCP + data   [packet]
+  2.Data Link     ETHERNET +  IP + TCP + data + ETHERNET [Frame]
+  1.Physical    
+     
+     3Way handshake
+       Syn
+       Syn/ACK
+       ACK
+      
+      TCP VS. UDP
+       
+    Application 
+     webbrowser can directly interact with 
+      Http , Smtp(mail transfer) 
+    transport layer
+     
+ TCP Connection oriented. sequence checking, error checking with packet retransmission
+
+      
+ UDP Connectionless and unrealible protocal.Ihad limited error checking capapilities.
+  It is simple protocal and used with minimum overhead.
+  
+  In UDP process can send the message without any reliablity
+      
+      
