@@ -1,0 +1,176 @@
+Streams :
+   The Stream is sequence of data
+       input:  Read
+       output: Write
+       
+                                          notes :
+                                            InputStreamReader supports UTF -16
+                                           Reader - read the Character
+                                           Buffer - array 
+       
+       
+       
+       
+ Way of Reading :
+   1) we can read data 8bit bytes
+   2)we can read dara as character (ASCII or Unicode(UTF-8 or UTF-16))
+   3) primitive data type
+   4) read object
+   
+  so we have different class that enable you to read above mensioned
+  
+  
+  1)Reading the input as 8 bit bytes :
+       class - InputStream
+         FileInputStram(read 8 bit) -read the file.
+            method - read() //single byte
+                     read(byte[]b) //store in the byte according to the size of array.
+                     read(byte[] b, int offset,int len)
+                         //offset starting index, len ending index
+            
+                     available() // return how many bytes remaining for reading.
+ 
+ once we done with file. we should close the file.then only another thread or program or object can access that file.
+ 
+ 
+ ANSI (8 bit), ASCII (7 bit), Unicode (UTF -8 or UTF-16)
+------------------------------------------------------------- 
+ Way of writing the data :
+ 
+ 
+ class:
+   i) FileOutputStream  (write data as 8bit byte)
+   ii) ByteArrayOutputStream
+   iii) FilterOutputStram
+      -BufferedOutputStream (write in buffer)
+      -DataOutputStream
+      -PrintStream (write in console)
+    iv) ObjectOutputStream               
+    
+
+
+FileOutputStream class
+
+     FileOutputStream(byte b, boolean append);
+     
+     
+  ------------------------------------------------------------------
+                            (Reader)
+  How read character from the file?
+    
+       Reader (super class)
+         i)InputStreamReader
+            -FileReader  (read from text file)
+         ii)BufferedReader
+         ii)CharArrayReader
+         iii)FilterReader
+         
+  
+  
+  FileReader
+          constructor(file path,boolean append)
+     read()  
+     read(char[] c)
+     read(char[] c,int offset,len);
+     //offset writing from this index  
+ how it identifies which code the file is used? 
+ ---------------------------------------------------------------------
+ 
+ HOW to read UniCode character ?
+    by using InputStreamReader 
+    in the Constructor we have to give
+     i)object of FileInputStream
+     ii)code
+     eg:
+     FileInputStream fin=new FileInputStream("File path");
+     InputStreamReader iread=new InputStramReader(fin,"UTF-16");
+     //this specify 2 bytes at the time.
+     
+  
+  -----------------------------------------------------------------------
+  
+  FileWriter ;
+     i)Create the instance of outputStreamWriter
+     
+    ----------------------------------------------------
+    
+   Serialization  :
+     -> converting the object into the series of byte.  
+      step: 
+      i) Create the FileOutputStream
+      ii)Create the objectOutputStream
+      iii)in ObjectOutputStream constructor pass the FileOutputStream reference
+      in parameter
+      iii)by using the addObject add the instance of the object. 
+    De-Serialization ;
+      -> Conveting the byte into the object.
+    
+     ObjcetOutputStream(OutputStream out) 
+     
+     
+     
+          
+ Transient varible :
+   this varible can't be serialized.  
+ static varible are not serialized 
+      
+      Note: the serializing object class must implements Serializable	
+-------------------------------------------- 
+
+
+                              Buffer
+                Default Size : 8 Kb 
+                  (8192 bytes)       
+ ->     it an Array from this array our program will take the data
+      
+ ->     buffer underly in input and output stream
+      
+  BufferedInputStream :
+  -------------------
+  
+          public BufferedInputStream(InputStream in)
+          public BufferedInputStream(InputStream in,int size)// size of the buffer.
+           
+           
+ Methods :
+   
+      available() // return the no. of byte that not yet read in the buffer
+      read() // will read one byte from the buffer
+      read(byte[]b,int off, int len)
+      
+      mark(int readLimit) // it will mark the current position 
+       it we perfrom reset() method then it will go to the mark position
+      markSupported()//check whether mark is supported?
+      reset() //current position move to mark position
+
+ readLimit :
+   the mark will remember only that read Limit 
+   if we cross the limit it may not work.
+   but it will work.
+   
+   
+   
+ BufferedOutputStream :
+ ---------------------
+     buffer to output 
+     flush() // Flushes all the data in buffer to output
+     write(byte[] b,int offset,int len)
+       // buffer to output
+     write() //1byte to buffer
+     
+     
+ BufferedReader :
+ -----------------
+    internally using inputStream Reader  'supports UTF -16'
+     
+     read() //reads the single Character
+     ready()//check whether this stram is ready to read.
+  
+  
+  BufferedWriter :
+  -----------------
+     internally using OutputStreamWriter 
+    
+    
+    
+   
