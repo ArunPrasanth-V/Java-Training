@@ -31,3 +31,12 @@ public IP :
    class C:
       used by small or home
       192.168.0.0
+      
+      
+ NAT (Network address transulation):
+   -> main task is to transulate the private Ip to Public IP and Publiv IP to Private IP.
+   -> we need the nat on the router site to transulate.
+   -> because of IP4 Limited IP address all the device in world would not get public IP Address.
+   
+   
+   ->IN future we may not need the private IP because of IPV6. which offer huge number of IP's
