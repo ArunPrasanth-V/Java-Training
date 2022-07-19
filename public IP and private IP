@@ -1,0 +1,33 @@
+public IP VS. Private IP ;
+
+
+public IP :
+   ->it is registered on the internet.
+   ->it is unique.
+   
+   
+ 
+ Private IP :
+    ->It is not publicly registered on the Internet.
+    ->private IP can't access to the Intenet.
+    ->The Only way to access is to transulate private to public IP using NAT(network address Transulation)
+    ->The Private IP address are use only Internally.
+    ->DHCP is a service used in router to assign private IP.
+    -> 
+    
+    NAT transulate :
+    public IP to Private IP
+    Private IP tp Public IP
+    
+    
+    
+  Private IP class :
+   class A :
+     used by large organization
+        start's with: 10.0.0.0
+   class B :
+      used by medium size Organization
+         start's with 172.16.0.0
+   class C:
+      used by small or home
+      192.168.0.0
