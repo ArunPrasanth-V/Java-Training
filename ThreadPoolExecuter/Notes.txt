@@ -1,0 +1,12 @@
+ Thread Pool :
+    it is a container of Threads.
+    we don't have to involve for creating the Threads
+    
+    These Threads are created by Executer Service.
+    
+    Executer Service is managing these Threads.
+    
+     just we need to submit the task that need to done.
+     
+     
+    
