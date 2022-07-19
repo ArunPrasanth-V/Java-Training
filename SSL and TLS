@@ -1,0 +1,80 @@
+SSL VPN :
+      ssl VPN is created tannel between the client and Corporate Network for secure transaction.
+      
+      
+  SSL -Secure Socket Layer (created by netscape in  1994).
+           ->ssl maintenance handed to IETF in 1999.
+           -> IETS renamed protocol to TLS.
+  TLS -Transport Layer Security 
+  
+    Both SSL and TLS maintaine the same protocal.
+   now a days,TLS is most used one.
+    
+    
+   HOW do SSL?TLS protect your data?
+    ->Data sent across a wire can captured by anyone in the middle
+    ->Purpose of SSL/TLS is to protect the data 
+    
+                         Encryption
+         i)Confidentiality [Data is only accessible by Client and Server]
+        -------------------
+                         Hashing
+         ii)Integrity [Data can't be modified between Client and Server]
+          -----------
+            it may not able to prevent.but it should detect the data modification.
+            
+                           PKI
+         iii)Authentication [Clent/server are indeed who they say they are]
+         ------------------  
+  
+  
+  
+ Anti-Replay and Non-Repudiation:
+   Anti-Replay ensure that recived data are unique by using the sequence number.
+   
+   Non-Repudiation ensure that this data has been by by the client.
+          (Integrity +Authentication)
+          
+          
+ Key players:
+ 
+ -> Client 
+      Entity initiating the TLS Handshake
+      -web Browser,IOT and lot more 
+      -Optionaly authenticated.
+      
+ -> Server 
+      receiving the TLS Handshake
+      -Web Server 
+      -Always Authenticated.(It provide the certificate to prove the identity)
+    
+    
+    
+ SSL Client is anything that initiating the HLS handshake  
+  
+    
+->  Certificate Authority 
+     =>it issue the certificate.
+     =>This certificate can be trust by the Client 
+     
+     
+    
+    
+ The handShake Protocal is used to establish session :
+    It allow the client ,server by sending series of message's
+  
+  this Protocal uses 4 phase cycle to complete it's system.
+     
+     
+      phase i) Both client and sever send "Hello"packet to each other
+      phase ii) Exchage the private and the public key 
+      phase iii) They reply to each other with encryption algorithm and the secret key
+      phase iV)handshake is completed.
+      
+      
+      
+  1. Web browser, send a message to web server for connecting a ssl website
+  2.web broser request the web server to identify itself
+  3.web server will respond it,by sending a copy of its SSl certificate
+  4. web browser will authenticate this certificate , send message aback to server
+  
