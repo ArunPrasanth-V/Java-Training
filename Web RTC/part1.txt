@@ -1,0 +1,112 @@
+ (open-source project)                     
+   It is framework for real-time(media) communication in browser. It communicate with other browser without any addtional plugins.
+   It is supported by all modern browser's
+   
+   
+   
+   JavaScript API enable implements their own WEb RTC app
+   
+   ----------------------------------------------
+   
+   WebRTC Components:
+   ----------------------------
+   1) SDP (Session Description Protocol):
+    is a simple string-based protocol and it is to share supported codecs between browsers.
+
+     Client A : create SDP (Offer) and save it in local SDP and share it with Client-B.
+     Client B :receives the SDP and save ita s remote SDP
+     
+     and client B create SDP and send to Client A
+   
+   ****important*** :If there are no common codecs between peers, peer-to-peer communication cannot be established. 
+   Opus, and PCM -> audio , vp8 and vp9 -vedio.x	
+   -----------------------------------------------
+   
+   2) ICE (Interactivity Connection Establishment):
+            =>ICE is a Algorithm that decide which one to use.
+   
+     if two node in the internet must communicate directly but presence of NAt and firewall makes it difficult for node to communicate.
+      we use ICE it a netwoking technique that makes use of STUN and TURN
+      
+STUN :(Session Traversal Utilities for NAT)
+      link : https://bloggeek.me/webrtcglossary/stun/
+      
+      it’s purpose is to answer the question “what is my IP address?”
+       A WebRTC client has to know its public IP address in order to get more sessions connected successfully. For that purpose, WebRTC sends a request to a STUN server asking for its public IP address. The server replies back to the WebRTC client with the public IP address the request came from. This way, the WebRTC client learns what its public IP address is.
+
+  When Stun fails:(Symmatic NAT's)
+     -=>STUN server asking for ip address the client nat gives it.but another peer asking for same IP address it give differnt. it may because of Port Number or private changes.
+     
+     
+TURN :(Traversal Using Relay NAT)  
+  If Direct connection is not possible.
+  if i can't ge my public IP address to work.we use TURN
+    in that STUN server fail case . It relay all traffic through the TURN Server.
+    	
+    IT cost more because we are putting Server
+  
+   link :
+    
+   https://antmedia.io/webrtc-transforms-live-streaming/
+ --------------------------------------------------------------------
+ RTP (Real-Time Protocol)
+ 
+    It transfer Real-Time data on top of UDP.(Audio,Video)
+ 
+ Sister protocal for RTP :
+      RTSP(Real-time Streaming Protocol) 
+ https://antmedia.io/rtsp-explained-what-is-rtsp-how-it-works/
+ 
+ 
+ 
+ 
+ 
+ ------------------------------------------------------------------
+ 
+ WebRTC Signalling :
+        It refers to the process of setting up,controlling and terminating a communication session.
+        two end point can talk each other
+         3 type of information must exchange :
+           i)Session control Information :
+                    Determine when to initialize, close and modify communication session.
+                    Session control message is also used in error repoting.
+            ii)Network Data: reveals where endpoints are located on the Internet (IP address and port) so that callers can find callees.
+             iii) Media Data : codes determine media and auto are in common then only the peer to peer communication will happen.
+             
+ 
+ 
+ 
+ 
+ https://www.onsip.com/voip-resources/voip-fundamentals/webrtc-signaling#:~:text=WebRTC%20signaling%20refers%20to%20the,close%2C%20and%20modify%20communications%20sessions.
+ --------------------------------------------------------------
+   ------------
+   Data Channel :data channel lets you send text or binary data over an active connection to a peer
+   
+   Reliable channels,Unreliable channels.
+   --------------
+   MediaStream :
+   
+   to easy access the media streams from local cameras and microphones.
+   
+   getUserMedia()
+   
+   ->security: ask before access.
+   
+   -----------
+      Peer Connection :
+         part of web RTC 
+   ---------------------------------------------------------------
+   
+   
+   
+   
+   Note's :
+     A codec compresses or decompresses media files such as songs or videos.
+       -----
+       
+     H. 264 or MPEG-4 AVC (Advanced Video Coding) is a video coding format for recording and distributing full HD video and audio. 
+     
+     H264, VP8, and VP9 codecs for video, Opus, and PCM codecs for audio
+     
+     
+ 
